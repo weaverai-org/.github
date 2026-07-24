@@ -1,0 +1,32 @@
+<svg width="560" height="140" viewBox="0 0 560 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WeaverAI">
+  <defs>
+    <linearGradient id="weave" x1="0" y1="0" x2="112" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="0.5" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="150" y1="30" x2="150" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E5E7EB"/>
+      <stop offset="1" stop-color="#9CA3AF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Woven mark: interlacing threads forming a mesh knot -->
+  <g transform="translate(14,14)" fill="none" stroke="url(#weave)" stroke-width="9" stroke-linecap="round">
+    <path d="M8 8 C 40 44, 72 68, 104 104"/>
+    <path d="M104 8 C 72 44, 40 68, 8 104"/>
+    <path d="M8 56 C 40 40, 72 72, 104 56" opacity="0.85"/>
+    <path d="M56 8 C 40 40, 72 72, 56 104" opacity="0.85"/>
+  </g>
+  <g transform="translate(14,14)" fill="#22D3EE">
+    <circle cx="8" cy="8" r="6"/>
+    <circle cx="104" cy="8" r="6"/>
+    <circle cx="8" cy="104" r="6"/>
+    <circle cx="104" cy="104" r="6"/>
+    <circle cx="56" cy="56" r="7" fill="#8B5CF6"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="150" y="82" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="52" font-weight="700" fill="url(#ink)" letter-spacing="-1">Weaver<tspan fill="#8B5CF6">AI</tspan></text>
+  <text x="152" y="110" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" fill="#6B7280" letter-spacing="3">WEAVING INTELLIGENCE</text>
+</svg>
