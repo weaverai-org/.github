@@ -1,46 +1,36 @@
-# `.github` — WeaverAI organization profile
+# WeaverAI — organization profile
 
-This is WeaverAI's special **`.github`** repository. GitHub renders
-[`profile/README.md`](./profile/README.md) as the public profile page shown on the
-organization's account at `github.com/weaverai`.
+This repository holds the public profile for the WeaverAI GitHub organization. GitHub renders
+[`profile/README.md`](./profile/README.md) on the organization's overview page.
 
 ## Structure
 
 ```
 .
 ├── profile/
-│   ├── README.md            # ← the public org profile (what visitors see)
+│   ├── README.md                       # Public organization profile
 │   └── assets/
-│       ├── logo.svg         # full horizontal logo (wordmark + mark)
-│       ├── icon.svg         # square app/avatar mark
-│       ├── icon-512.png     # 512px avatar — upload as the org avatar
-│       ├── icon-192.png     # 192px icon
-│       ├── favicon.svg      # scalable favicon
-│       ├── favicon.ico      # multi-res favicon (16/32)
-│       ├── favicon-16.png
-│       ├── favicon-32.png
-│       └── apple-touch-icon.png
-└── README.md                # this file
+│       ├── weaverai-logo-official.svg  # Primary logo, for light backgrounds
+│       ├── weaverai-logo-negative.svg  # Negative logo, for dark backgrounds
+│       └── favicon.ico                 # Favicon (48×48)
+└── README.md
 ```
 
-## Using the brand assets
+## Brand assets
 
-- **Org avatar:** upload `profile/assets/icon-512.png` in
-  *Organization settings → Profile → Profile picture*.
-- **Favicon (for any WeaverAI website):**
-  ```html
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  ```
+The profile selects the logo variant from the viewer's colour scheme:
 
-## Brand
+```html
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="weaverai-logo-negative.svg">
+  <img src="weaverai-logo-official.svg" alt="WeaverAI">
+</picture>
+```
 
-| Token | Value |
+| Colour | Hex |
 | --- | --- |
-| Indigo | `#6366F1` |
-| Violet | `#8B5CF6` |
-| Cyan | `#22D3EE` |
-| Ink (dark) | `#111827` |
+| Navy | `#26247A` |
+| Orange | `#EF7B22` |
+| Green | `#048945` |
 
-Tagline: **"Weaving intelligence into everything we build."**
+Both logos use outlined type and render without external fonts.

@@ -1,82 +1,104 @@
 <div align="center">
 
-<img src="./assets/logo.svg" alt="WeaverAI" width="420" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/weaverai-logo-negative.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/weaverai-logo-official.svg">
+  <img src="./assets/weaverai-logo-official.svg" alt="WeaverAI" width="360">
+</picture>
 
-### Weaving intelligence into everything we build
+### Run your own token factory
 
-WeaverAI builds an **AI-native platform for modern infrastructure** — one system woven
-from four peers that take you from bare metal all the way up to production AI and
-self-driving reliability.
+Sovereign AI infrastructure software — from bare metal to working agents,
+on hardware you own, under governance you set.
 
-[![Website](https://img.shields.io/badge/website-weaverai-6366F1?style=flat-square)](#)
-[![Status](https://img.shields.io/badge/status-building-8B5CF6?style=flat-square)](#)
-[![Focus](https://img.shields.io/badge/focus-AI%20infrastructure-22D3EE?style=flat-square)](#)
+[Website](https://weaverai.org) · [Platform](https://weaverai.org/platform) · [Governance](https://weaverai.org/governance) · [Contact](https://weaverai.org/contact)
 
 </div>
 
 ---
 
-## 🧭 The platform
+## The platform
 
-Four products, each strong on its own and stronger together. They share one design
-language, compose through clean provider ports, and can run **standalone** or
-**integrated** as a single platform.
+WeaverAI is one stack in four layers. Each layer runs on its own; together they share one
+identity, one policy model, one audit trail, one data plane and one observability plane.
+Adopt one product or all four, and grow into the rest without re-platforming.
 
-```
-        ┌──────────────────────────────────────────────┐
-        │                  Observe                      │   reliability
-        │            (the AI SRE for ops)               │
-        ├──────────────────────────────────────────────┤
-        │                   Studio                      │   intelligence
-        │        (model lifecycle · LLMOps)             │
-        ├──────────────────────────────────────────────┤
-        │                   Orbit                       │   workloads
-        │           (workload orchestration)            │
-        ├──────────────────────────────────────────────┤
-        │                  Nucleus                      │   foundation
-        │       (infrastructure control plane)          │
-        └──────────────────────────────────────────────┘
-```
+| Layer | Product | Manages | Turns |
+| :---: | --- | --- | --- |
+| 04 | **Agent Studio** | Agents | models into agents that do the work |
+| 03 | **Studio** | Models | work into models you can trust |
+| 02 | **Orbit** | Workloads | capacity into work |
+| 01 | **Nucleus** | Machines | hardware into capacity |
 
-## 🧩 Projects
+**Fleet** complements the stack at the edge, releasing software across fleets of edge
+Kubernetes clusters under the same governance model.
 
-### ⚛️ Nucleus — *Mission Control for modern infrastructure*
-The control plane **above** physical infrastructure and Kubernetes. It turns bare metal
-into cloud-like capacity for Kubernetes, AI workloads, and virtualization — vendor-neutral,
-API-first, and extensible by design.
+## Products
 
-### 🛰️ Orbit — *Workload orchestration*
-The scheduling and orchestration layer that places workloads across the fleet — the engine
-that runs training, inference, and services where they belong.
+### Nucleus — Mission Control for modern infrastructure
 
-### 🎛️ Studio — *The model lifecycle platform*
-An enterprise **LLMOps / ModelOps** platform covering the full journey: discovery,
-fine-tuning, training, evaluation, prompt engineering, deployment, and production
-observability — Kubernetes-native from the ground up.
+The infrastructure control plane above physical hardware and Kubernetes. Nucleus discovers,
+inventories and provisions bare metal, builds clusters from approved blueprints or adopts
+existing ones in place, and operates them as a single estate. Teams receive **Capsules** —
+isolated clusters on shared machines with multi-dimensional quota across CPU, memory, GPU
+(whole, MIG or fractional), storage and network. Vendor-neutral through a provider framework
+spanning Redfish, IPMI, Metal3, MAAS, Ironic, RKE2, K3s, Rancher, Cluster API, HAMi, the
+NVIDIA GPU Operator and KubeVirt.
 
-### 🔭 Observe — *The AI SRE for enterprises*
-Federates the monitoring, tracing, logging, and deployment tools you already run, weaves
-their signals into an evidence graph, and runs investigations that end in a provenanced
-root-cause report — or say *inconclusive* rather than guess.
+### Orbit — Where capacity becomes work
 
-> Deeper details live inside each product's own repository. This profile stays high-level
-> by design.
+The workload platform on top of Nucleus-managed capacity. Orbit runs a single logical queue
+across clusters with fair shares, priority classes, gang scheduling and topology-aware
+placement, packing fractional and partitioned workloads into the gaps. Teams get isolated
+workspaces, notebooks and cloud IDEs backed by fractions of an accelerator, with idle
+detection, checkpoint-aware suspend and resume, and tiered data placement — keeping
+expensive hardware producing instead of idle.
 
-## 🛠️ How we build
+### Studio — Where models are made, proven and served
 
-- **Composable** — every product stands alone yet snaps together through clean ports.
-- **Reliable by default** — thoughtful architecture, observability, and graceful failure.
-- **API-first & vendor-neutral** — open surfaces, no lock-in, extensible by design.
+A Kubernetes-native LLMOps and ModelOps platform covering the full model lifecycle: model
+discovery and import, data preparation, fine-tuning and training, experiment comparison,
+evaluation, prompt engineering, approval, serving through a governed LLM gateway, and
+production monitoring. Studio keeps an unbroken record from dataset to deployed version,
+runs training and serving inside your own clusters, and supports on-premises and
+air-gapped deployment. Runs standalone or integrated with Nucleus and Orbit.
 
-## 🤝 Get in touch
+### Agent Studio — Where agents go to work
 
-Interested in what we're building, collaborating, or just want to say hi?
+The agent control plane. An agent is defined once as a specification; its runtime, sandbox
+and target are chosen at deploy time. Agent Studio deploys to Kubernetes (GPU or CPU) and
+container hosts — from accelerator clusters to a workstation under a desk — with pluggable
+runtimes including NVIDIA NeMo Agent Toolkit, NemoClaw, LangGraph and custom images. It adds
+durable multi-step workflows with human approval, chat with live tool-call traces,
+per-agent token and cost accounting, hierarchical controls, quotas and a hash-chained
+audit trail.
 
-- 💬 Open a discussion or issue in any of our repositories
-- ✉️ Reach the team through the contact on our organization profile
+### Fleet — Release control for edge Kubernetes
+
+A release control plane for fleets of edge clusters. Products are described once as
+components (Helm or YAML) with layered configuration — project, component, release,
+cluster — rendered to a signed artifact and delivered by an outbound-only, mTLS-enrolled
+edge operator. Releases are immediate, scheduled or approval-gated, preserve local changes
+on reconcile, and roll back exactly at cluster or release scope. Supports air-gapped sites
+and any conformant Kubernetes distribution.
+
+## Principles
+
+- **Sovereign by design** — runs entirely inside your network and jurisdiction, including air-gapped environments.
+- **Governed end to end** — multi-tenancy, MFA and SSO, scoped access control, quotas and tamper-evident audit across every layer.
+- **Vendor-neutral** — silicon-agnostic and provider-pluggable; integrates the tools you already run rather than replacing them.
+- **Composable** — every product stands alone and integrates through well-defined provider interfaces.
+
+## Delivery
+
+| Model | Description |
+| --- | --- |
+| **WeaverAI Cloud** | Fully managed, multi-tenant sovereign AI cloud, consumed as a metered service. |
+| **Dedicated Token Factory** | A ring-fenced zone designed, built and operated for a single institution. |
+| **Token Factory Suite** | The platform licensed and supported on your own hardware, with optional managed operations. |
+
+---
 
 <div align="center">
-
-<sub>© WeaverAI · Weaving intelligence into everything we build</sub>
-
+<sub>WeaverAI is built by NPCI Tech Solutions · <a href="https://weaverai.org">weaverai.org</a></sub>
 </div>
